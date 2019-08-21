@@ -1,0 +1,12 @@
+//--------------------VARIABLES--------------------
+$primary: grey !default;
+
+$sidebar-base-width: 14rem;
+
+//--------------------MIXINS--------------------
+@mixin  easeIn {
+    transition: all 0.6s ease-in;
+}
+
+
+
