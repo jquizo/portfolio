@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route } from 'react-router-dom'
 
 //Pages
 import Home from './pages/home';
@@ -18,24 +18,19 @@ library.add(fas, fab)
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <HashRouter basename="/">
+        <div>
         <Sidenav />
-        <Router>
-          <Route>
-            <Switch>
-
-              <Route exact path="/" component={Home} />
-              <Route path="/projects" component={Projects} />
-              <Route path="/contact" component={Contact} />
-              <Route component={NoPage} />
-
-            </Switch>
-          </Route>
-        </Router>
-
-      </React.Fragment>
+        </div>    
+        <div>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/projects" component={Projects} />
+          <Route exact path="/contact" component={Contact} />
+        </div>
+      </HashRouter>
     );
   }
 }
+
 
 export default App;
